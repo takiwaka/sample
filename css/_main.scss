@@ -1,0 +1,66 @@
+.main {
+  background-image: url("../image/background.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  h1 {
+    height: 87px;
+    font-size: 36px;
+    padding-top: 40vh;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 30px;
+    padding-top: 2vh;
+    font-weight: bold;
+  }
+
+  .btn {
+    margin-top: 1vh;
+    a {
+      font-size: 38px;
+      color: #ffffff;
+      background-color: #3f51b5;
+      padding: 10px 30px;
+      border-radius: 12px;
+    }
+  }
+}
+
+@media all and (min-width: 480px) {
+  .main {
+    h1 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 30px;
+    }
+    .btn {
+      margin-top: 50px;
+      a {
+        font-size: 38px;
+        padding: 17px 81px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+.main {
+    h1 {
+      font-size: 68px;
+    }
+    p {
+      font-size: 38px;
+    }
+    .btn {
+      margin-top: 82px;
+      a {
+        font-size: 38px;
+      }
+    }
+  }
+}
