@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="image/favicon.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
-  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <title>河北ポートフォリオ2</title>
 </head>
@@ -16,31 +15,44 @@
 
     <header>
       <div class="container">
-        <div class="logo">
-          <a href="#main">
-            <img src="image/logo.png" alt="ロゴ">
-          </a>
-        </div>
-        <div class="menu">
-          <ul>
-            <li><a href="#card">Card</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#price">Price</a></li>
-            <li><a href="#access">Access</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        <a href="#main" class="logo">
+          <img src="image/logo.png" alt="ロゴ">
+        </a>
+        <div>
+
+          <div class="menu">
+            <ul>
+              <li><a href="#card">Card</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#price">Price</a></li>
+              <li><a href="#access">Access</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <div class="menu-content">
+              <ul>
+                <li><a href="#card">Card</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#price">Price</a></li>
+                <li><a href="#access">Access</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
     <div class="contents">
-
       <!-- main -->
       <div class="main" id="main">
         <h1>ポートフォリオ</h1>
         <p>2作目</p>
         <div class="btn">
-          <a href="#">お問い合わせ</a>
+          <a href="#contact">お問い合わせ</a>
         </div>
       </div>
 
@@ -161,25 +173,25 @@
                   <tr>
                     <th>row1</th>
                     <td>100円</td>
-                    <td>100円</td>
+                    <td>200円</td>
                   </tr>
                   <tr>
                     <th>row2</th>
-                    <td>6000円</td>
-                    <td>0円</td>
+                    <td>300円</td>
+                    <td>400円</td>
                   </tr>
                   <tr>
                     <th>row3</th>
-                    <td><span>6000円</span><br>※今だけ半額</td>
-                    <td>0円</td>
+                    <td><span>500円</span><br>※今だけ半額</td>
+                    <td>600円</td>
                   </tr>
                   <tr>
                     <th>row4</th>
-                    <td>100円</td>
-                    <td>100円</td>
+                    <td>700円</td>
+                    <td>800円</td>
                   </tr>
                 </table>
-                <p>※目安なので詳しくは<a href="#">お問い合わせ</a>下さい。</p>
+                <p>※目安なので詳しくは<a href="#contact">お問い合わせ</a>下さい。</p>
               </div>
             </div>
           </div>
@@ -199,8 +211,6 @@
                 width="800" height="400" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
             </div>
-            <p>住所　　　　　　　ウクライナ 〒65000 オデッサ</p>
-            <p>アクセス　　　　　オデッサ国際空港から90分</p>
             <div class="btn">
               <a href="#">Googleマップで見る</a>
             </div>

@@ -180,6 +180,183 @@ a {
   font-family: "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
 
+/*
+html5doctor.com Reset css
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
 .wrap {
   width: 100%;
 }
@@ -194,7 +371,7 @@ a {
 }
 
 header {
-  background-color: #3f51b5;
+  background-color: #006c6a;
   height: 100px;
   width: 100%;
   position: fixed;
@@ -217,9 +394,14 @@ header .container {
 }
 
 header .container .logo {
-  width: 200px;
-  height: 31px;
   margin-left: 10px;
+}
+
+header .container .logo img {
+  width: 200px;
+  height: 42px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 header .container .menu {
@@ -247,6 +429,118 @@ header .container .menu ul li a:hover {
   border-bottom: solid 3px #e81919;
 }
 
+header .container .menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 90;
+}
+
+header .container .menu-btn span,
+header .container .menu-btn span:before,
+header .container .menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+
+header .container .menu-btn span:before {
+  bottom: 8px;
+}
+
+header .container .menu-btn span:after {
+  top: 8px;
+}
+
+header .container #menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+
+header .container #menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+header .container #menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+header .container #menu-btn-check {
+  display: none;
+}
+
+header .container .menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  /*leftの値を変更してメニューを画面外へ*/
+  z-index: 80;
+  background-color: rgba(63, 81, 181, 0.8);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  /*アニメーション設定*/
+}
+
+header .container .menu-content ul {
+  padding: 70px 10px 0;
+}
+
+header .container .menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+
+header .container .menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+
+header .container .menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+
+header .container #menu-btn-check:checked ~ .menu-content {
+  left: 0;
+  /*メニューを画面内へ*/
+}
+
 @media all and (min-width: 480px) {
   header .container .logo {
     margin-left: 30px;
@@ -257,13 +551,18 @@ header .container .menu ul li a:hover {
   header .container .menu {
     display: block;
   }
+  header .container .hamburger-menu {
+    display: none;
+  }
 }
 
 .main {
-  background-image: url("../image/background.png");
+  background-image: url("../image/background.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
   height: 100vh;
   text-align: center;
 }
@@ -282,13 +581,13 @@ header .container .menu ul li a:hover {
 }
 
 .main .btn {
-  margin-top: 1vh;
+  margin-top: 5vh;
 }
 
 .main .btn a {
   font-size: 38px;
   color: #ffffff;
-  background-color: #3f51b5;
+  background-color: #006c6a;
   padding: 10px 30px;
   border-radius: 12px;
 }
@@ -353,8 +652,8 @@ header .container .menu ul li a:hover {
   border-radius: 4px;
   margin: 0 0 20px 0;
   padding: 20px 10px 22px 10px;
-  height: 355px;
   text-align: left;
+  list-style: none;
 }
 
 .card-wrapper .container .cards .card img {
@@ -390,7 +689,7 @@ header .container .menu ul li a:hover {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #3f51b5;
+  background-color: #006c6a;
 }
 
 @media all and (min-width: 480px) {
@@ -405,7 +704,6 @@ header .container .menu ul li a:hover {
   .card-wrapper .container .cards .card {
     margin: 0 10px 20px 0;
     padding: 20px 20px 22px 20px;
-    height: 355px;
     width: calc(50% - 5px);
   }
   .card-wrapper .container .cards .card img {
@@ -429,8 +727,6 @@ header .container .menu ul li a:hover {
   }
   .card-wrapper .container .cards .card {
     margin: 0 30px 20px 0;
-    padding: 20px 20px 22px 20px;
-    height: 355px;
     width: calc(33.33333333% - 20px);
   }
   .card-wrapper .container .cards .card img {
@@ -500,7 +796,7 @@ header .container .menu ul li a:hover {
 }
 
 .news-wrapper .container .news-content .label-color2 {
-  background-color: #3f51b5;
+  background-color: #006c6a;
 }
 
 .news-wrapper .container .news-content .label-color3 {
@@ -636,17 +932,8 @@ header .container .menu ul li a:hover {
   min-height: 600px;
   max-height: 965px;
   margin: 0 auto;
+  padding-bottom: 50px;
   text-align: center;
-}
-
-.access-wrapper .container p {
-  text-align: start;
-  margin-left: 40px;
-  margin-top: 2rem;
-}
-
-.access-wrapper .container p:last-of-type {
-  margin-top: 1rem;
 }
 
 .access-wrapper .container .btn {
@@ -658,7 +945,7 @@ header .container .menu ul li a:hover {
   font-weight: bold;
   font-size: 20px;
   color: #ffffff;
-  background-color: #3f51b5;
+  background-color: #006c6a;
   padding: 15px 58px;
   border-radius: 12px;
 }
@@ -811,7 +1098,7 @@ header .container .menu ul li a:hover {
 }
 
 .contact-wrapper .container .contact .input-radio + span::after {
-  background: #3f51b5;
+  background: #006c6a;
   border: 1px solid transparent;
   border-radius: 50%;
   content: "";
@@ -891,7 +1178,7 @@ header .container .menu ul li a:hover {
   font-weight: bold;
   font-size: 20px;
   color: #ffffff;
-  background-color: #3f51b5;
+  background-color: #006c6a;
   padding: 15px 87px;
   border-radius: 12px;
   position: relative;
