@@ -137,31 +137,7 @@
         }
       }
 
-      .input-check + span::before {
-        -webkit-transform: translateY(-50%);
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.16);
-        border-radius: 2px;
-        content: "";
-        display: block;
-        left: -50px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 30px;
-      }
 
-      .input-check + span::after {
-        -webkit-transform: translateY(-50%);
-        content: url("../image/check.svg");
-        display: none;
-        position: absolute;
-        left: -48px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: all 0.3s ease 0s;
-      }
 
       .input-check:checked + span::after {
         display: block;
@@ -170,7 +146,7 @@
       .btn {
         margin-top: 3rem;
         width: 100%;
-        a {
+        p {
           font-weight: bold;
           font-size: 20px;
           color: #ffffff;
@@ -179,30 +155,7 @@
           border-radius: 12px;
           position: relative;
         }
-
-        a:after {
-          position: absolute;
-          content: "\f054";
-          font-family: "Font Awesome 5 Free";
-          font-size: 20px;
-          top: auto;
-          right: auto;
-          left: auto;
-          bottom: auto;
-          padding-left: 2rem;
-        }
       }
-    }
-  }
-}
-@media all and (min-width: 480px) {
-
-}
-
-@media all and (min-width: 768px) {
-  .contact-wrapper {
-    .container {
-      min-height: 1264px;
     }
   }
 }
